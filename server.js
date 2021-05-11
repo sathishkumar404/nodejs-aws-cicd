@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
+var http = require("http").Server(app);
 const port = process.env.port || 3000;
 
-app.get('/', (req, res) => {
+http.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
