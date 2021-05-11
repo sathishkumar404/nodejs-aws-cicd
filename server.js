@@ -3,11 +3,11 @@ const app = express()
 var http = require("http").Server(app);
 const port = process.env.port || 5000;
 
-http.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
 
-app.listen(port, () => {
+http.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
