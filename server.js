@@ -1,13 +1,16 @@
 const express = require('express')
 const app = express()
-var http = require("http").Server(app);
+const cors = require('cors');
+var server = require("http").Server(app);
 const port = process.env.port || 5000;
+
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
 
-http.listen(port, () => {
+server.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
