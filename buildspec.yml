@@ -2,17 +2,20 @@ version: 0.1
 
 phases:
   install:
+      runtime-versions:
+        nodejs: 10
       commands:
       - echo installing ...
-      - npm install
 
   pre_build:
     commands:
     - echo running pre build 
+    - npm install
 
   build:
     commands:
         - echo Build started
+        - npm run build
 
   post_build:
       commands:
